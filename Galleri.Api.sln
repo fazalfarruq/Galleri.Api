@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galleri.Api", "Galleri.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galleri.Api.Tests", "Galleri.Api.Tests\Galleri.Api.Tests.csproj", "{0FF9E21E-69AF-4689-AFD9-7DC6B0CAA3C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galleri.Api.Types", "Galleri.Api.Types\Galleri.Api.Types.csproj", "{A5087097-F0B1-49AE-9758-D3375728DE21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0FF9E21E-69AF-4689-AFD9-7DC6B0CAA3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF9E21E-69AF-4689-AFD9-7DC6B0CAA3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF9E21E-69AF-4689-AFD9-7DC6B0CAA3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5087097-F0B1-49AE-9758-D3375728DE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5087097-F0B1-49AE-9758-D3375728DE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5087097-F0B1-49AE-9758-D3375728DE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5087097-F0B1-49AE-9758-D3375728DE21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

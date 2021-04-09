@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="graphiql" Version="2.0.0" />
     <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Galleri.Api.Types\Galleri.Api.Types.csproj" />
   </ItemGroup>
 
 

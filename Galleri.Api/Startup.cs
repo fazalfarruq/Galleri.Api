@@ -11,7 +11,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Galleri.Api.Interfaces;
+using Galleri.Api.Query;
+using Galleri.Api.Schema;
 using Galleri.Api.Services;
+using Galleri.Api.Type;
+using Galleri.Api.Types.Interfaces;
+using Galleri.Api.Types.Models;
+using GraphiQl;
+using GraphQL.Server;
+using GraphQL.Types;
 
 namespace Galleri.Api
 {
@@ -28,7 +36,18 @@ namespace Galleri.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IProduct, ProductService>();
+            services.AddSingleton<IAppSettings, AppSettings>();
+            services.AddTransient<IHttpClientService, HttpClientService>();
+            services.AddTransient<IMetricProvider<AccountProductModel>, MetricProviderService<AccountProductModel>>();
+            services.AddSingleton<AccountProductMetric>();
+            services.AddSingleton<ISchema, AccountProductMetricSchema>();
+
+            services.AddGraphQL(
+                options =>
+                {
+                    options.EnableMetrics = false;
+                }).AddSystemTextJson();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,16 +58,8 @@ namespace Galleri.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseGraphiQl("/graphql");
+            app.UseGraphQL<ISchema>();
         }
     }
 }
